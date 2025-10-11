@@ -1,0 +1,28 @@
+/* Shop-Script */
+.footer span {
+  font-family: 'splash';
+}
+
+/* General */
+footer {
+  background-color: black;
+  color: white;
+  padding-top: 1rem;
+}
+
+/* The icons */
+.social {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+.social i {
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+  color: white;
+}
+
+/* The writing */
+.footer p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}

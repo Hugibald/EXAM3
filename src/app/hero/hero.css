@@ -1,0 +1,21 @@
+/* Shop-script */
+#heroP {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0.5rem 0;
+  color: white;
+  font-family: 'Splash';
+  font-size: 2rem;
+}
+
+/* The background-image */
+#heroImage {
+  position: relative;
+  text-align: center;
+  height: 15vh;
+  background-image: url('/images/Hero.png');
+  background-repeat: repeat-x;
+}

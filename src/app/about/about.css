@@ -1,0 +1,26 @@
+/* Shop-Name script */
+.shopName {
+  font-family: 'Splash';
+  margin-right: 5px;
+  font-size: 2rem;
+}
+
+/* The title */
+.title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* The paragraphs */
+.aboutP {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Bottom-margin */
+.end {
+  margin-bottom: 5rem;
+}

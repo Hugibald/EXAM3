@@ -1,0 +1,91 @@
+/* The table */
+.container {
+  margin-top: 5rem;
+}
+
+th {
+  font-size: 1.2rem;
+}
+td {
+  font-weight: 500;
+}
+
+/* The icons */
+.plus {
+  margin-right: 5px;
+}
+.minus {
+  margin-left: 5px;
+}
+.del {
+  margin-left: 10px;
+}
+
+/* The go-back button */
+.goBack {
+  margin-left: 10px;
+}
+
+/* The bottom-margins */
+.text-end {
+  margin: 2rem;
+}
+h2 {
+  margin-bottom: 5rem;
+}
+
+/* To make sure the cart is fully visible on small screens */
+@media (min-width: 451px) and (max-width: 650px) {
+  th {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  td {
+    font-size: 0.7rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  .bi {
+    font-size: 0.7rem !important;
+  }
+  .plus {
+    margin-right: 0.4px;
+  }
+  .minus {
+    margin-left: 0.4px;
+  }
+  .del {
+    margin-left: 6px;
+  }
+}
+@media (max-width: 450px) {
+  th {
+    font-size: 0.8rem;
+    font-weight: 200;
+  }
+  td {
+    font-size: 0.5rem;
+  }
+  h3 {
+    font-size: 0.8rem;
+  }
+  h2 {
+    font-size: 0.8rem;
+  }
+  .bi {
+    font-size: 0.5rem !important;
+  }
+  .plus {
+    margin-right: 0.2px;
+  }
+  .minus {
+    margin-left: 0.2px;
+  }
+  .del {
+    margin-left: 3px;
+  }
+}

@@ -1,0 +1,78 @@
+<div class="container">
+  @if( cart.length >0 ){
+  <table class="table align-middle text-center">
+    <thead>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(item of cart; track item.id){
+      <tr>
+        <td class="w-25">
+          <img [src]="'/images/' + item.image" alt="{{ item.name }}" class="img-fluid w-50" />
+        </td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}€</td>
+        <td>
+          <i
+            class="plus fs-6 bi bi-plus-circle-fill text-success"
+            (click)="increaseQuantity(item)"
+            role="button"
+          ></i>
+          {{ item.quantity }}
+          <i
+            class="minus fs-6 bi bi-dash-circle-fill text-warning"
+            (click)="decreaseQuantity(item)"
+            role="button"
+          ></i>
+          <i
+            class="del fs-6 bi bi-trash3-fill text-danger"
+            (click)="deleteItem(item)"
+            role="button"
+          ></i>
+        </td>
+        <td>{{ item.price * item.quantity }}€</td>
+      </tr>
+      }
+      <tr>
+        <td></td>
+        <td>Service</td>
+        <td>10%</td>
+        <td></td>
+        <td>{{ service }}</td>
+      </tr>
+      @if(total > 40){
+      <tr>
+        <td>Halloween Special:</td>
+        <td>Subtotal</td>
+        <td></td>
+        <td></td>
+        <td>{{ subTotal }}€</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Reduced</td>
+        <td>-15%</td>
+        <td></td>
+        <td class="text-danger">-{{ discount.toFixed(2) }}€</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <h3 class="text-end">Total: {{ total }}€</h3>
+  <a class="btn btn-primary" routerLink="/products">Back to the Shop!</a>
+  <div class="d-flex justify-content-center">
+    <a class="btn btn-warning my-4" (click)="clearCart()">Purchase items</a>
+  </div>
+  }@else{
+  <h2>
+    Add some items to your cart!
+    <a class="btn btn-primary goBack" routerLink="/products">To the Shop!</a>
+  </h2>
+  }
+</div>

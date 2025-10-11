@@ -1,0 +1,12 @@
+/* Shop-name */
+.navbar-brand {
+  font-family: 'Splash';
+}
+
+/* This is to keep the navbar visible even when scrolling. */
+:host {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+/* :host  so that it effects the <app-navbar/>-tag and not only the component.*/

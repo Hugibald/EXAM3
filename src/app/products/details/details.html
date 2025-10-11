@@ -1,0 +1,27 @@
+<div class="container">
+  <div *ngIf="product; else notFound">
+    <div class="row my-5">
+      <div class="col">
+        <img [src]="'/images/' + product.image" class="img-fluid prodImg" [alt]="product.name" />
+      </div>
+      <div class="col">
+        <h1>{{ product.name }}</h1>
+        <p>{{ product.description }}</p>
+        <p>Price: {{ product.price }}€</p>
+        <button
+          class="btn mx-3"
+          [ngClass]="product.availability ? 'btn-success' : 'btn-secondary'"
+          [disabled]="!product.availability"
+          (click)="addToCart(product)"
+        >
+          <i class="bi bi-cart4"></i>
+        </button>
+        <a class="btn btn-primary my-5" routerLink="/products">Back to the Shop!</a>
+      </div>
+    </div>
+  </div>
+  <ng-template #notFound>
+    <h2>404 Cryptid not found</h2>
+    <a class="btn btn-primary" routerLink="/products">To the Shop!</a>
+  </ng-template>
+</div>

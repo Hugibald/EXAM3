@@ -1,0 +1,70 @@
+/* Shop-Name */
+.shopName {
+  font-family: 'Splash';
+  margin-right: 5px;
+}
+
+/* The component-wide script */
+.cont {
+  position: relative;
+  text-align: center;
+  height: 25vh;
+  background-repeat: repeat-x;
+}
+.info {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 100%;
+  padding: 0.5rem 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 2rem;
+}
+.news {
+  font-size: 1.5rem;
+}
+.SubTitle {
+  font-size: 1.2rem;
+}
+
+/* Special spacing for the Halloween-Special */
+#special {
+  transform: translate(-50%, 0%);
+}
+
+/* The background-images */
+#specialImage {
+  background-image: url('/images/Halloween.png');
+}
+#harvestImage {
+  background-image: url('/images/Resources.png');
+}
+#newsImage {
+  background-image: url('/images/News.png');
+}
+
+/* To make sure the home-page looks good on small devices */
+@media (min-width: 451px) and (max-width: 650px) {
+  .info {
+    font-size: 1.5rem;
+  }
+  .news {
+    font-size: 1rem;
+  }
+  .SubTitle {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 450px) {
+  .info {
+    font-size: 1rem;
+  }
+  .news {
+    font-size: 0.7rem;
+  }
+  .SubTitle {
+    font-size: 0.5rem;
+  }
+}

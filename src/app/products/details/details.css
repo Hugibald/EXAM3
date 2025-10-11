@@ -1,0 +1,4 @@
+/* To make sure the pictures are not getting too big */
+.prodImg {
+  max-height: 70vp;
+}
