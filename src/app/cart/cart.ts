@@ -19,9 +19,11 @@ export class Cart {
     this.loadCart();
     this.showTotal();
   }
+  // shows the items in the cart
   loadCart() {
     this.cart = this.cartService.getCartItems();
   }
+  // calculates service, total, discount and subTotal
   showTotal() {
     let { service, total, discount, subTotal } = this.cartService.calculateTotal();
     this.service = service;
@@ -29,15 +31,18 @@ export class Cart {
     this.discount = discount;
     this.subTotal = subTotal;
   }
+  // Empty the cart
   clearCart() {
     this.cartService.clearCart();
     this.cart = [];
   }
+  // increase the Quantity
   increaseQuantity(item: IProducts) {
     item.quantity++;
     this.cartService.updateCart(this.cart);
     this.showTotal();
   }
+  // decrease the Quantity
   decreaseQuantity(item: IProducts) {
     if (item.quantity > 1) {
       item.quantity--;
@@ -47,6 +52,7 @@ export class Cart {
     }
     this.showTotal();
   }
+  // clears the item off the cart
   deleteItem(item: IProducts) {
     let index = this.cart.findIndex((i) => i.id === item.id);
     if (index !== -1) {

@@ -13,6 +13,7 @@ import { PRODUCTS } from '../productList';
 export class Products {
   productArray: IProducts[] = PRODUCTS;
   constructor(private cartService: CartService) {}
+  // Add item to the cart
   addToCart(p: IProducts): void {
     this.cartService.addToCart(p);
   }

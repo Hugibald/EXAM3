@@ -19,41 +19,49 @@
         <td>{{ item.name }}</td>
         <td>{{ item.price }}€</td>
         <td>
+          <!-- Increase Quantity -->
           <i
             class="plus fs-6 bi bi-plus-circle-fill text-success"
             (click)="increaseQuantity(item)"
             role="button"
           ></i>
           {{ item.quantity }}
+          <!-- Decrease Quantity -->
           <i
             class="minus fs-6 bi bi-dash-circle-fill text-warning"
             (click)="decreaseQuantity(item)"
             role="button"
           ></i>
+          <!-- Delete Item from cart -->
           <i
             class="del fs-6 bi bi-trash3-fill text-danger"
             (click)="deleteItem(item)"
             role="button"
           ></i>
         </td>
+        <!-- Price for the specific item/s -->
         <td>{{ item.price * item.quantity }}€</td>
       </tr>
       }
       <tr>
+        <!-- Service-charge of 10% -->
         <td></td>
         <td>Service</td>
         <td>10%</td>
         <td></td>
         <td>{{ service }}</td>
       </tr>
+      <!-- Discount of 15% when Total > 40 -->
       @if(total > 40){
       <tr>
+        <!-- Display the total before the discount -->
         <td>Halloween Special:</td>
         <td>Subtotal</td>
         <td></td>
         <td></td>
         <td>{{ subTotal }}€</td>
       </tr>
+      <!-- Display the discount -->
       <tr>
         <td></td>
         <td>Reduced</td>
@@ -64,14 +72,19 @@
       }
     </tbody>
   </table>
+  <!-- The Total amount -->
   <h3 class="text-end">Total: {{ total }}€</h3>
+  <!-- Return to the Shop to continue shopping -->
   <a class="btn btn-primary" routerLink="/products">Back to the Shop!</a>
+  <!-- Clears the whole cart -->
   <div class="d-flex justify-content-center">
     <a class="btn btn-warning my-4" (click)="clearCart()">Purchase items</a>
   </div>
+  <!-- If Cart is empty -->
   }@else{
   <h2>
     Add some items to your cart!
+    <!-- Return to the shop -->
     <a class="btn btn-primary goBack" routerLink="/products">To the Shop!</a>
   </h2>
   }

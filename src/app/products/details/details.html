@@ -1,4 +1,5 @@
 <div class="container">
+  <!-- the if gave an error here, so I had to use ngIf -->
   <div *ngIf="product; else notFound">
     <div class="row my-5">
       <div class="col">
@@ -8,6 +9,7 @@
         <h1>{{ product.name }}</h1>
         <p>{{ product.description }}</p>
         <p>Price: {{ product.price }}€</p>
+        <!-- This button is canged according to their availiability, in case someone accesses the Detail-Page despite the missing buttons. -->
         <button
           class="btn mx-3"
           [ngClass]="product.availability ? 'btn-success' : 'btn-secondary'"
@@ -16,10 +18,12 @@
         >
           <i class="bi bi-cart4"></i>
         </button>
+        <!-- Back to the shop here -->
         <a class="btn btn-primary my-5" routerLink="/products">Back to the Shop!</a>
       </div>
     </div>
   </div>
+  <!-- If the item is not found -> else from the ngIf -->
   <ng-template #notFound>
     <h2>404 Cryptid not found</h2>
     <a class="btn btn-primary" routerLink="/products">To the Shop!</a>

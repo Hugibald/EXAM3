@@ -1,17 +1,21 @@
-<div class="contaner my-5">
+<div class="container my-5">
   <div class="row g-5">
+    <!-- Make sure that the product exists -->
     @for(product of productArray; track $index){
     <div class="col d-flex justify-content-center">
+      <!-- To give a set height to the cards -->
       <div class="card h-100" style="width: 15rem">
         <img [src]="'/images/' + product.image" class="card-img-top" alt="{{ product.name }}" />
         <div class="card-body">
           <h5 class="card-title">{{ product.name }}</h5>
           <p class="card-text">Price: {{ product.price }}€</p>
+          <!-- When the product is availaible -->
           @if(product.availability){
           <a class="btn btn-primary" [routerLink]="['/details', product.id]">Details</a>
           <a class="btn btn-success mx-3" (click)="addToCart(product)"
             ><i class="bi bi-cart4"></i
           ></a>
+          <!-- if not -->
           }@else{
           <p class="text-secondary">
             This Cryptid is currently unavailable. Contact us for more Information.

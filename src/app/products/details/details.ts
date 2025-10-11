@@ -14,10 +14,12 @@ import { PRODUCTS } from '../../productList';
 export class Details implements OnInit {
   product: IProducts | undefined;
   constructor(private route: ActivatedRoute, private cartService: CartService) {}
+  // To get the the right item through the id
   ngOnInit() {
     let productID = Number(this.route.snapshot.params['id']);
     this.product = PRODUCTS.find((p) => p.id === productID);
   }
+  // Add to cart-function
   addToCart(product: IProducts): void {
     this.cartService.addToCart(product);
   }

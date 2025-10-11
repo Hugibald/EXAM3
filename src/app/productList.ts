@@ -1,5 +1,6 @@
 import { IProducts } from './iproducts.interface';
 
+// The products in my store
 export let PRODUCTS: IProducts[] = [
   {
     id: 1,
