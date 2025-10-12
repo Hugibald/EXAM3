@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { IProducts } from './iproducts.interface';
 
 @Injectable({
@@ -6,9 +7,15 @@ import { IProducts } from './iproducts.interface';
 })
 export class CartService {
   private cart: IProducts[] = [];
+  // Terminal: npm install --save @angular/material
+  // Snackbar for message
+  private snackBar = inject(MatSnackBar);
   // Adds item to cart
   addToCart(product: IProducts): void {
     let existingProduct = this.cart.find((item) => item.id === product.id);
+    // Source: youtube: qpKUf_9Ut9k
+    // To show a message when Item added to cart
+    this.snackBar.open('Cryptid added to cart.', '', { duration: 3000, panelClass: ['snack'] });
     if (existingProduct) {
       existingProduct.quantity++;
     } else {

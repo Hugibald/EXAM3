@@ -1,2 +1,8 @@
 /* The font for the Shop-name */
 @import url('https://fonts.googleapis.com/css2?family=Splash&display=swap');
+
+/* Message for addToCart */
+.snack {
+  background-color: black;
+  color: white;
+}
